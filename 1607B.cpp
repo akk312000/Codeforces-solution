@@ -66,28 +66,51 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 
 void solve() {
 
-	cout << "Hi";
+    int t; cin >> t;
+    while (t--)
 
 
-	cout << "yo";
+
+    {
+        long long int n, k;
+        cin >> k >> n;
+
+
+        long long int rem = n % 4;
+        long long int arr[4];
+        arr[0] = 0;
+        arr[1] = -n;
+        arr[2] =  1;
+        arr[3] = n + 1;
+
+        if (k % 2 == 0)
+        {
+            cout << k + arr[rem] << endl;
+        }
+        else
+        {
+            cout << k - arr[rem] << endl;
+        }
+
+    }
 
 
 
 }
 int main() {
 #ifdef Ashish
-	freopen("Error.txt", "w", stderr);
+    freopen("Error.txt", "w", stderr);
 #endif
-	fastio();
-	auto start = chrono::high_resolution_clock::now();
-	solve();
-	auto end = chrono::high_resolution_clock::now();
-	double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
-	time_taken *= 1e-9;
+    fastio();
+    auto start = chrono::high_resolution_clock::now();
+    solve();
+    auto end = chrono::high_resolution_clock::now();
+    double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    time_taken *= 1e-9;
 #ifdef Ashish
-	cerr << "Time:" << fixed
-	     << time_taken << setprecision(9);
-	cerr << "sec" << endl;
+    cerr << "Time:" << fixed
+         << time_taken << setprecision(9);
+    cerr << "sec" << endl;
 #endif
 
 }
